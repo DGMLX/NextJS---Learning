@@ -15,9 +15,9 @@ export default function RootLayout({children}:Readonly<{children: React.ReactNod
   return (
     <html lang="en">
       <body>
-
+        <header>Header layout root</header>
         {children}
-    
+        <footer>Footer layout root</footer>
       </body>
     </html>
   );

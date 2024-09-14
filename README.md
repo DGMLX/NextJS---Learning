@@ -8,3 +8,7 @@ Learned
 - File colocation
 - Private folders
 - Route Groups
+- Layouts
+- Nested Layouts
+- Route Group Layout
+- Routing metadata
