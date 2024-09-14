@@ -5,4 +5,6 @@ Learned
 - Rutas dinámicas anidadas
 - Catch-all segments ([...slug] / [[...slug]])
 - Not found page (Página error personalizada)
-
+- File colocation
+- Private folders
+- Route Groups
