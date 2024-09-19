@@ -1,6 +1,13 @@
+import Link from "next/link";
+
 const HomePage = () =>{
   return(
-    <h1>Home Page</h1>
+    <>
+      <Link href="/about">About</Link>
+      <Link href="/profile">Profile</Link>
+      <Link href="/productos">Productos</Link>
+      <h1>Home Page</h1>
+    </>
   )
 }
 
