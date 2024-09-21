@@ -1,9 +1,12 @@
+'use client'
 import { notFound } from "next/navigation";
 
 const ReviewId = ({params}:{params:{productoId:string,reviewId:string}}) =>{
 
-    if(parseInt(params.reviewId) > 1000){
-        notFound();
+    const numeroAzar = Math.random()*10;
+    console.log(numeroAzar)
+    if(numeroAzar > 5){
+        throw new Error("Error en la busqueda del review.")
     }
 
     return(

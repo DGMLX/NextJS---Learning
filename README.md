@@ -14,5 +14,12 @@ Learned
 - Routing metadata
 - Title metadata
 - Link component Navigation
-- Active Links
-- Navigating Programmatically
+- Active Links (usePathname)
+- Navigating Programmatically (useRouter)
+- Templates
+- Loading UI
+- Error handling
+- Recovering from errors
+- Handling errors in Nested Routes
+- Handling errors in Layouts
+- Parallel Routes

@@ -1,6 +1,7 @@
 'use client'
 import Link from "next/link"
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const navLinks = [
     {name:"Login",href:"/login"},
@@ -10,10 +11,14 @@ const navLinks = [
 
 
 export default function RootLayout({children}:Readonly<{children: React.ReactNode;}>){ 
+    const [valorInput,setValorInput] = useState('');
     const pathname = usePathname();
     return (
     <>
         <div>
+            <div className="block">
+                <input type="text" value={valorInput} onChange={e=>setValorInput(e.target.value)} />
+            </div>
             {
                 navLinks.map(link=>{
                     const isActive = pathname.startsWith(link.href)
