@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next";
 import "./globals.css";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,9 +16,21 @@ export default function RootLayout({children}:Readonly<{children: React.ReactNod
   return (
     <html lang="en">
       <body>
-        <header>Header layout root</header>
-        {children}
-        <footer>Footer layout root</footer>
+        <header className="flex justify-around py-5 bg-blue-500 text-2xl text-white">
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/productos">Productos</Link>
+          <Link href="/profile">Profile</Link>
+          <Link href="/docs">Docs</Link>
+          <Link href="/dashboard">Dashboard</Link>
+          <Link href="/login">Login</Link>
+        </header>
+        <main className="bg-blue-400 ">
+          <div className="pt-10">
+            {children}
+          </div>
+        </main>
+        <footer className="py-5 bg-blue-500 text-center text-xl text-white">Learning NextJS 2024</footer>
       </body>
     </html>
   );

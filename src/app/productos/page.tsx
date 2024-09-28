@@ -7,7 +7,7 @@ const Productos= () =>{
 
     return(
         <>
-            <h1>Lista de productos..</h1>
+            <h1 className="text-5xl text-center text-white">Lista de productos..</h1>
             <Link href="/productos/1" className="block">Producto 1</Link>
             <Link href="/productos/2" className="block">Producto 2</Link>
             <Link href="/productos/3" className="block">Producto 3</Link>

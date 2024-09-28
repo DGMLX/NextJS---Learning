@@ -11,7 +11,7 @@ const PagarCompra = () =>{
 
     return(
         <>
-            <h1>Pagando la compra de tus productos......</h1>
+            <h1 className="text-5xl text-center text-white">Pagando la compra de tus productos......</h1>
             <button onClick={handleGoHome}>Volver al inicio</button>
         </>
     )

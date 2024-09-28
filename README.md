@@ -126,4 +126,46 @@ Learned
         - Manejo independiente de rutas
         - Subnavegación
 
-- Unmatched routes
+- Unmatched routes (default.tsx)
+    - Uno de los grandes beneficios de parallel routes es la subnavegación.
+    - Creamos una carpeta en notificaciones llamada archivos con su page.tsx y del page.tsx de notificaciones creamos un Link hacia esa ruta. Funciona, pero al momento de recargar la pagina en la ruta /dashboard/archivos
+    tenemos un error 404.
+    - Esto se debe a que en esa ruta no se encuentran los slots users, metricas y children, para solucionarlo debemos agregar un default.tsx a cada ruta unmatched.
+
+- Conditional routes
+    - Condicional de rutas basado en estado de autentificacion del usuario, mediante ternario validamos que ruta se navega, por ejemplo, dependiendo el estado de autentificacion si es true o false
+
+- Intercepting routes
+    - Intercepta o detiene el comportamiento por defecto de la ruta solicitada para presentar una vista alternativa cuando navegamos a traves de la UI
+    - Uso de sintaxis de carpetas con (.)FolderName... Haremos una intercepcion a la ruta F2 usando el siguiente directorio:   
+        -F1
+            ->(.)F2
+                ->page.tsx ------> Simple h1 con un texto ruta (.) interceptada F2
+            ->F2
+                page.tsx   ------> Simple h1 con un texto ruta F2
+            ->page.tsx     ------> Simple h1 con un texto ruta F1 y un link que navega a F1/F2
+    
+    - Para interceptar una ruta de un nivel más arriba usamos (..)FolderName
+        -F1
+            ->F3
+                ->page.tsx     ---> h1 con un texto ruta F3
+            ->F4
+                ->(..)F3   // usamos (..) porque interceptamos una ruta de un nivel mas arriba
+                    ->page.tsx ---> h1 con un texto (..) ruta F3 interceptada
+                ->page.tsx     ---> h1 con un texto ruta F4 y un link que navega a F1/F3
+
+    - Para interceptar una ruta dos niveles mas arriba (..)(..)FolderName
+    - Para interceptar una ruta del nivel del root app directory (...)FolderName
+
+- Parallel intercepting routes (Example with an exercise)
+
+- Route Handlers (route.ts)
+
+- Handling GET request
+- Handling POST request
+- Dynamic route Handlers
+- Handling PATCH request
+- Handling DELETE request
+- URL query params
+- Redirects in route handlers
+- Headers in route handlers

@@ -16,9 +16,6 @@ export default function RootLayout({children}:Readonly<{children: React.ReactNod
     return (
     <>
         <div>
-            <div className="block">
-                <input type="text" value={valorInput} onChange={e=>setValorInput(e.target.value)} />
-            </div>
             {
                 navLinks.map(link=>{
                     const isActive = pathname.startsWith(link.href)

@@ -6,7 +6,7 @@ const Docs = ({params}:{params:{slug:string[]}}) =>{
             return <h1>Viewing the docs page for feature {params.slug[0]}</h1>
         }
     return(
-        <h1>Docs Home Page</h1>
+        <h1 className="text-5xl text-center text-white">Docs Home Page</h1>
     )
 }
 
