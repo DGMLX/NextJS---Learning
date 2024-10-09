@@ -160,9 +160,44 @@ Learned
 - Parallel intercepting routes (Example with an exercise)
 
 - Route Handlers (route.ts)
+    - Permite manejar peticiones
+    - Permite crear Restfull endpoints
+    - Permite realizar peticiones a APIs externas
+    - Usar export async function con el nombre del verbo de la peticion HTTP
+        - export async function GET(){...} 
+        - export async function POST(){...} 
+        - export async function PATCH(){...} 
+        - export async function DELETE(){...} 
+    - route.ts es similar al page.tsx, podemos usar route.ts en vez de page.tsx y usar rutas anidadas con el
+    - Si creamos un route.ts al mismo nivel que el page.tsx se reenderiza el route.ts como prioridad ante el page.tsx, para solucionar este conflicto, creamos una subcarpeta api y dentro ponemos el route.ts para que no choquen.
 
 - Handling GET request
+    - Usar thunder client 
+    - Creamos una ruta xNombre con un data.ts y le ponemos un export const xNombre =[{...},{...},...]
+    - Creamos un route.ts exportamos la const de data.ts y creamos una funcion GET
+    - export async function GET(){ return Response.json(dataImportada)}
+    - Hacemos una peticion GET a la url desde thunder client
+
 - Handling POST request
+    - Creamos una funcion POST que toma como parametro request donde vendra la data enviada por el cliente:
+    - export async function POST(request:Request){
+        const nombreVariable = await request.json() ----> Se almacena la data enviada
+        const newDato = {          ----------> Creamos el objeto nuevo
+            id:...,
+            info:nombreVariable.info,
+            precio:nombreVariable.precio.,
+            .....
+        }
+        dataImportada.push(newDato)        ------> Agregamos el objeto creado y lo enviamos a la data
+        return new Response(JSON.stringify(newDato),{    ---> retornamos por pantalla el elemento agregado
+            headeres:{
+                "Content-Type":"application/json",
+            },
+            status:201
+        })
+    }
+    - Probamos con thunder client
+
 - Dynamic route Handlers
 - Handling PATCH request
 - Handling DELETE request
